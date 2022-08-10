@@ -2,7 +2,6 @@
   "resources": [
     {"id":{"name":"sprHull","path":"sprites/sprHull/sprHull.yy",},"order":0,},
     {"id":{"name":"sprCanon","path":"sprites/sprCanon/sprCanon.yy",},"order":1,},
-    {"id":{"name":"custom_script","path":"scripts/custom_script/custom_script.yy",},"order":0,},
     {"id":{"name":"objCanon","path":"objects/objCanon/objCanon.yy",},"order":1,},
     {"id":{"name":"objHull","path":"objects/objHull/objHull.yy",},"order":0,},
     {"id":{"name":"rooMain","path":"rooms/rooMain/rooMain.yy",},"order":0,},
