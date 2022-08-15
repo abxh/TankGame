@@ -14,8 +14,12 @@ if (key_right) rd = -1;
 if (key_left or key_right) and !(key_left and key_right) {
 	if !(key_shift) {
 		image_angle += rd*rspeed;
+		objCanon.image_angle += rd*rspeed;
 	}
-	objCanon.image_angle += rd*canonSpeed;
+	else
+	{
+		objCanon.image_angle += rd*canonSpeed;
+	}
 }
 
 if (key_shift) {
