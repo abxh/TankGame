@@ -4,10 +4,15 @@
 width = 1366;
 height = 768;
 
-x_0 = random_range(0,width);
-y_0 = random_range(0,height);
+rand_angle = random_range(0,360);
 
-instance_create_layer(x_0,y_0,rooMain, objEnemy);
+vec = new Vector2(0,1);
+vec.Rotate(rand_angle);
+
+vec.x *= 800;
+vec.y *= 600;
+
+instance_create_layer(vec.x + width/2,vec.y + height/2, rooMain, objEnemy);
 
 show_debug_message("Enemy created");
 
