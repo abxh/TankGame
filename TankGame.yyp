@@ -2,8 +2,15 @@
   "resources": [
     {"id":{"name":"sprHull","path":"sprites/sprHull/sprHull.yy",},"order":0,},
     {"id":{"name":"sprCanon","path":"sprites/sprCanon/sprCanon.yy",},"order":1,},
+    {"id":{"name":"Operations","path":"scripts/Operations/Operations.yy",},"order":2,},
+    {"id":{"name":"objBullet","path":"objects/objBullet/objBullet.yy",},"order":3,},
     {"id":{"name":"objCanon","path":"objects/objCanon/objCanon.yy",},"order":1,},
+    {"id":{"name":"sprEnemyTMP","path":"sprites/sprEnemyTMP/sprEnemyTMP.yy",},"order":2,},
+    {"id":{"name":"Matrix","path":"scripts/Matrix/Matrix.yy",},"order":1,},
+    {"id":{"name":"Vector","path":"scripts/Vector/Vector.yy",},"order":0,},
+    {"id":{"name":"objEnemy","path":"objects/objEnemy/objEnemy.yy",},"order":2,},
     {"id":{"name":"objHull","path":"objects/objHull/objHull.yy",},"order":0,},
+    {"id":{"name":"sprBullet","path":"sprites/sprBullet/sprBullet.yy",},"order":3,},
     {"id":{"name":"rooMain","path":"rooms/rooMain/rooMain.yy",},"order":0,},
   ],
   "Options": [
