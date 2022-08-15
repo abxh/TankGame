@@ -13,7 +13,12 @@ objCanon.y = 768/2;
 image_angle = 0;
 rspeed = 0.5;
 
+canonSpeed = 1;
+
 // Variables related to forward/backward movement:
 v_current = 0;
 v_max = 2;
 acc = v_max / 10;
+
+// Alarm event for spawning enemies
+alarm[0]=room_speed*5;
