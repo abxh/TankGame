@@ -1,6 +1,13 @@
 /// @description Movement controls
 // TODO: add terrain?
 
+//draw_healthbar(0, 50, 50, 0, health*10, c_black, c_red, c_lime, 0, true, true);
+
+
+if(health <= 0){
+	show_debug_message("Game Over!");
+	room_restart();
+}
 key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W"));
 key_down  = keyboard_check(vk_down)   or keyboard_check(ord("S"));
 key_left  = keyboard_check(vk_left)   or keyboard_check(ord("A"));
@@ -54,3 +61,7 @@ objCanon.x = x;
 objCanon.y = y;
 objCanon.x += -dcos(-image_angle)*canon_offset;
 objCanon.y += -dsin(-image_angle)*canon_offset;
+
+if(alarm[0] == -1){
+	alarm[0] = room_speed * 5;;
+}
