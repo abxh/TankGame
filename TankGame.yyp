@@ -11,6 +11,7 @@
     {"id":{"name":"objEnemy","path":"objects/objEnemy/objEnemy.yy",},"order":2,},
     {"id":{"name":"objHull","path":"objects/objHull/objHull.yy",},"order":0,},
     {"id":{"name":"sprBullet","path":"sprites/sprBullet/sprBullet.yy",},"order":3,},
+    {"id":{"name":"objEnemyBullet","path":"objects/objEnemyBullet/objEnemyBullet.yy",},"order":4,},
     {"id":{"name":"rooMain","path":"rooms/rooMain/rooMain.yy",},"order":0,},
   ],
   "Options": [

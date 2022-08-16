@@ -1,8 +1,14 @@
 /// @description
 
+health = 10;
+
 // Place at the center:
-x=1366/2;
-y=768/2;
+camera = view_get_camera(0);
+x=camera_get_view_x(camera) + camera_get_view_width(camera)/2;
+y=camera_get_view_y(camera) + camera_get_view_height(camera)/2;
+
+
+
 
 // Offset canon by a little bit.
 canon_offset = 8;
@@ -20,5 +26,4 @@ v_current = 0;
 v_max = 2;
 acc = v_max / 10;
 
-// Alarm event for spawning enemies
-alarm[0]=room_speed*5;
+can_shoot = true;
