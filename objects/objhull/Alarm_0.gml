@@ -9,8 +9,7 @@ rand_angle = random_range(0,360);
 vec = new Vector2(0,1);
 vec.Rotate(rand_angle);
 
-vec.x *= 800;
-vec.y *= 600;
+vec.Scale(800);
 
 instance_create_layer(vec.x + width/2,vec.y + height/2, rooMain, objEnemy);
 
