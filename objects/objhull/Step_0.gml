@@ -10,11 +10,19 @@ if(alarm[0] == -1){
 	alarm[0] = room_speed * 5;;
 }
 
-key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W"));
-key_down  = keyboard_check(vk_down)   or keyboard_check(ord("S"));
-key_left  = keyboard_check(vk_left)   or keyboard_check(ord("A"));
-key_right = keyboard_check(vk_right)  or keyboard_check(ord("D"));
-key_shift = keyboard_check(vk_shift);
+key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;
+key_down  = keyboard_check(vk_down)   or keyboard_check(ord("S")) or gamepad_axis_value(4, gp_axislv) >  0.5;
+key_left  = keyboard_check(vk_left)   or keyboard_check(ord("A")) or gamepad_axis_value(4, gp_axislh) < -0.5;
+key_right = keyboard_check(vk_right)  or keyboard_check(ord("D")) or gamepad_axis_value(4, gp_axislh) >  0.5;
+key_shift = keyboard_check(vk_shift)  or gamepad_button_check(4, gp_face1);
+key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
+
+// Shoot:
+if(key_space and can_shoot){
+	instance_create_layer(objCanon.x, objCanon.y,rooMain, objBullet);
+	alarm[1] = room_speed * 1;
+	can_shoot = false;
+}
 
 // Rotation:
 if (key_left) rd = 1;
