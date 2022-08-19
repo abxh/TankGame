@@ -6,8 +6,6 @@ x=camera_get_view_x(camera) + camera_get_view_width(camera)/2;
 y=camera_get_view_y(camera) + camera_get_view_height(camera)/2;
 
 
-
-
 // Offset canon by a little bit.
 canon_offset = 8;
 objCanon.x = x - canon_offset;
