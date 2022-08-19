@@ -1,13 +1,8 @@
 /// @description Movement controls
-// TODO: add terrain?
 
 if(health <= 0){
 	show_debug_message("Game Over!");
 	room_restart();
-}
-
-if(alarm[0] == -1){
-	alarm[0] = room_speed * 5;;
 }
 
 key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;
@@ -20,7 +15,7 @@ key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
 // Shoot:
 if(key_space and can_shoot){
 	instance_create_layer(objCanon.x, objCanon.y,rooMain, objBullet);
-	alarm[1] = room_speed * 1;
+	alarm[0] = room_speed * 1;
 	can_shoot = false;
 }
 

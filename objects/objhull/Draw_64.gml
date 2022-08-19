@@ -1,3 +1,5 @@
+/// @description Health bar
+
 cam_width = camera_get_view_width(camera);
 cam_height = camera_get_view_height(camera);
 
