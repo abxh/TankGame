@@ -1,3 +1,3 @@
-health--;
+health++;
 
 instance_destroy(other);

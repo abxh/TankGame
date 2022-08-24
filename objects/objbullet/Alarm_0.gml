@@ -1,1 +1,1 @@
-instance_destroy(id);
+instance_destroy(self);

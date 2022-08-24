@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 function shoot(){
-	instance_create_layer(self.x, self.y, rooMain, objEnemyBullet);
+	instance_create_layer(self.x, self.y, "insBullet", objEnemyBullet);
 }
 
 function reload(){
@@ -13,7 +13,7 @@ function reload(){
 direction = point_direction(x,y,objHull.x, objHull.y);
 image_angle = direction;
 
-dist = sqrt((x-objHull.x)*(x-objHull.x)+(y-objHull.y)*(y-objHull.y));
+var dist = sqrt((x-objHull.x)*(x-objHull.x)+(y-objHull.y)*(y-objHull.y));
 
 if(dist < range_go){
 	speed = 0;

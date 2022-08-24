@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "Sprite5",
+    "path": "sprites/Sprite5/Sprite5.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
@@ -18,19 +21,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Invisible",
-    "path": "folders/Objects/Invisible.yy",
+    "name": "Powerups",
+    "path": "folders/Objects/Powerups.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objSpawner",
+  "name": "objHealthPowerup",
   "tags": [],
   "resourceType": "GMObject",
 }

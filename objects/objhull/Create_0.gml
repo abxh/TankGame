@@ -1,4 +1,4 @@
-health = 10;
+health = global.MAXHEALTH;
 
 // Place at the center
 camera = view_get_camera(0);
