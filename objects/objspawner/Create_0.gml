@@ -1,11 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+difficulty = 1;
+
 SpawnHealth = function(pos){
 	instance_create_layer(pos.x, pos.y, "insPowerup", objHealthPowerup);
 }
 
-SpawnEnemy = function(){
+SpawnEnemy = function(enemy_type){
 	var camera = view_get_camera(0);
 	var cam_width = camera_get_view_width(camera);
 	var cam_height = camera_get_view_height(camera);
@@ -25,5 +27,5 @@ SpawnEnemy = function(){
 	
 	
 	show_debug_message("New enemy spawned");
-	instance_create_layer(vec.x + objHull.x, vec.y + objHull.y, "insEnemy", objEnemy);
+	instance_create_layer(vec.x + objHull.x, vec.y + objHull.y, "insEnemy", enemy_type);
 }

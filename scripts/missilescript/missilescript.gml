@@ -4,12 +4,12 @@ function GetClosestEnemy(){
 	var enemies = [0];
 	var closestEnemy;
 	
-	for(var i = 0; i < instance_number(objEnemy);i++){
-		enemies[i] = instance_find(objEnemy, i);
+	for(var i = 0; i < instance_number(objEnemyParent);i++){
+		enemies[i] = instance_find(objEnemyParent, i);
 	}
 	closestEnemy = enemies[0];
 	
-	for(var i = 1; i < instance_number(objEnemy);i++){
+	for(var i = 1; i < instance_number(objEnemyParent);i++){
 		//var distance = sqrt((objHull.x-enemies[i].x)*(objHull.x-enemies[i].x) + (objHull.y - enemies[i].y)*(obj));
 		if(distance_to_object(enemies[i]) < distance_to_object(closestEnemy) ){
 			closestEnemy = enemies[i];
@@ -17,6 +17,40 @@ function GetClosestEnemy(){
 	}
 	
 	return closestEnemy;
+}
+
+function GetFrontEnemy(){
+	var enemies = [0];
+	var frontEnemy;
+	
+	var count = instance_number(objEnemyParent);
+	
+	for(var i = 0; i < count; i++){
+		enemies[i] = instance_find(objEnemyParent, i);
+	}
+	frontEnemy = enemies[0];
+	
+	var dir_closest = new Vector2(1,0);
+	
+	dir_closest.Rotate(point_direction(x, y, enemies[0].x, enemies[0].y));
+	
+	var dir = new Vector2(1,0);
+	
+	dir.Rotate(objCanon.image_angle);
+	
+	for(var i = 0; i < count; i++){
+		var dir_current = new Vector2(1,0);
+		
+		if(Angle(dir, dir_current) < Angle(dir, dir_closest))
+		{
+			dir_closest = new Vector2(1,0);
+			
+			dir_closest.Rotate(point_direction(x, y, enemies[i].x, enemies[i].y));
+			frontEnemy = enemies[i];
+		}
+	}
+	show_debug_message(Angle(dir, dir_closest));
+	return frontEnemy;
 }
 
 function GetNewDirection(){
@@ -39,13 +73,12 @@ function GetNewDirection(){
 		dir1.Scale(self.iterator);
 	
 		ret = Add(dir1, dir2);
-		
-		ret.Normalize();
-		ret.Scale(self.spd);
 	}
 	else{
 		ret = self.dir_vec;
 	}
 	
+	ret.Normalize();
+	ret.Scale(self.spd);
 	return ret;
 }

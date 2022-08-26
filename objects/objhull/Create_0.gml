@@ -23,3 +23,5 @@ v_max = 2;
 acc = v_max / 10;
 
 can_shoot = true;
+
+loading_val = 0;

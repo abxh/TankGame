@@ -1,3 +1,7 @@
 /// @description Spawn Enemies
 
-SpawnEnemy();
+SpawnEnemy(objEnemy);
+
+if(difficulty > 5){
+	SpawnEnemy(objEnemy2);
+}

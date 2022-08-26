@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprEnemyTMP",
-    "path": "sprites/sprEnemyTMP/sprEnemyTMP.yy",
+    "name": "sprEnemy2TMP",
+    "path": "sprites/sprEnemy2TMP/sprEnemy2TMP.yy",
   },
   "solid": false,
   "visible": true,
@@ -39,7 +39,7 @@
     "path": "folders/Objects/Enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objEnemy",
+  "name": "objEnemy2",
   "tags": [],
   "resourceType": "GMObject",
 }

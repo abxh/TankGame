@@ -14,7 +14,7 @@ key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
 
 // Shoot:
 if(key_space and can_shoot){
-	var selected_enemy = GetClosestEnemy();
+	var selected_enemy = GetFrontEnemy();
 	if(selected_enemy != 0){
 		var missile = instance_create_layer(objHull.x, objHull.y, "insBullet", objMissile);
 		missile.enemy = selected_enemy;
@@ -25,6 +25,9 @@ if(key_space and can_shoot){
 	else{
 		show_debug_message("No enemies found...");
 	}
+}
+if(can_shoot){
+	loading_val = 0;
 }
 
 // Rotation:
