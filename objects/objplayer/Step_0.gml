@@ -20,4 +20,16 @@ if (key_down)  { r = Add(r, new Vector2( 0,-1)); dkey = true; }
 if (key_right) { r = Add(r, new Vector2( 1, 0)); dkey = true; }
 if (key_left)  { r = Add(r, new Vector2(-1, 0)); dkey = true; }
 
-// Movement:
+if (dkey) r_approach = r.GetAngle();
+if (image_angle != r_approach) {
+	// Use the shortest angle to rotate.
+	var diff = target - image_angle;
+	
+	if (diff > 180)  image_angle += (diff - 360);
+	if (diff <= 180) image_angle += diff;
+}
+
+if (key_up)   y+=1;
+if (key_down) y-=1;
+if (key_right)x+=1;
+if (key_down) x-=1;

@@ -16,4 +16,5 @@ v_mag = 0; // current speed.
 v_max = 2; // maximum speed
 
 image_angle = 0;
-r_speed = 45;
+r_approach  = 0;
+r_precision = 3; // 45 / r_precision is changed pr. frame when rotated.
