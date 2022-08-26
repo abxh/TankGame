@@ -6,6 +6,4 @@ image_angle = direction-90;
 
 speed = global.BULLETSPEED;
 
-alarm[0] = room_speed*5;
-
 damage = 1;

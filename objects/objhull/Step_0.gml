@@ -1,79 +1,47 @@
 /// @description Movement controls
 
-if(health <= 0){
-	show_debug_message("Game Over!");
-	room_restart();
-}
-
-key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;
-key_down  = keyboard_check(vk_down)   or keyboard_check(ord("S")) or gamepad_axis_value(4, gp_axislv) >  0.5;
-key_left  = keyboard_check(vk_left)   or keyboard_check(ord("A")) or gamepad_axis_value(4, gp_axislh) < -0.5;
-key_right = keyboard_check(vk_right)  or keyboard_check(ord("D")) or gamepad_axis_value(4, gp_axislh) >  0.5;
-key_shift = keyboard_check(vk_shift)  or gamepad_button_check(4, gp_face1);
-key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
-
-// Shoot:
-if(key_space and can_shoot){
-	var selected_enemy = GetFrontEnemy();
-	if(selected_enemy != 0){
-		var missile = instance_create_layer(objHull.x, objHull.y, "insBullet", objMissile);
-		missile.enemy = selected_enemy;
+function shoot(){
 	
-		alarm[0] = room_speed * 1;
-		can_shoot = false;
-	}
-	else{
-		show_debug_message("No enemies found...");
-	}
-}
-if(can_shoot){
-	loading_val = 0;
+	can_shoot = false;
 }
 
-// Rotation:
-if (key_left) rd = 1;
-if (key_right) rd = -1;
+var dist = point_distance(x,y,objPlayer.x, objPlayer.y);
 
-if (key_left or key_right) and !(key_left and key_right) {
-	if !(key_shift) {
-		image_angle += rd*rspeed;
-		objCanon.image_angle += rd*rspeed;
-	}
-	else
-	{
-		objCanon.image_angle += rd*canonSpeed;
-	}
+var dir_to_player = point_direction(x,y,objPlayer.x, objPlayer.y);
+
+direction = dir_to_player;
+image_angle = dir_to_player;
+
+var v1 = new Vector2(1,0);
+v1.Rotate(dir_to_player);
+
+var v2 = new Vector2(1,0);
+v2.Rotate(canon.image_angle);
+
+
+var canon_player_angle = Angle(v1, v2);
+
+
+var canon_player_angle_diff_s = sign((canon.image_angle - 180) - (dir_to_player - 180));
+
+if(dist > range_shoot && speed < spd){
+	speed += acc;
 }
 
-if (key_shift) {
-	// Do not run the code in the following lines,
-	// if the shift key is pressed.
-	return;
-}
-
-// Forward / backward movement:
-if (key_up) d = 1;
-if (key_down) d = -1;
-
-if (key_up or key_down) and !(key_up and key_down) {
-	// Increase by acc towards d*v_max
-	if (abs(v_current) < v_max) {
-		v_current += d*acc;
+if(dist <= range_go){
+	if(speed > 0){
+		speed -= acc;
+	}
+	
+	if(canon_player_angle > self.max_angle){
+		canon.image_angle -= canon_speed * canon_player_angle_diff_s;
+	}
+	else if (can_shoot){
+		shoot();
 	}
 }
-else {
-	// Go towards zero.
-	if (v_current != 0) {
-		v_current -= sign(v_current)*acc;
-	}
-}
-
-// Some trigonometry to get new x,y coordinates.
-x += dcos(-image_angle)*v_current;
-y += dsin(-image_angle)*v_current;
-
 // Keep offset consistent with rotation.
-objCanon.x = x;
-objCanon.y = y;
-objCanon.x += -dcos(-image_angle)*canon_offset;
-objCanon.y += -dsin(-image_angle)*canon_offset;
+canon.x = x;
+canon.y = y;
+canon.x += -dcos(-image_angle)*canon_offset;
+canon.y += -dsin(-image_angle)*canon_offset;
