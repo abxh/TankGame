@@ -29,7 +29,7 @@ if (image_angle != r_approach) {
 }
 
 // Movement:
-if (key_up)    { y -= 1; }
-if (key_down)  { y += 1; }
-if (key_right) { x += 1; }
-if (key_left)  { x -= 1; }
+if (key_up)    { y -= v_max; }
+if (key_down)  { y += v_max; }
+if (key_right) { x += v_max; }
+if (key_left)  { x -= v_max; }
