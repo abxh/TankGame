@@ -9,4 +9,5 @@ direction = point_direction(x,y,objHull.x, objHull.y) + rand;
 image_angle = direction - 90;
 speed = 30;
 
+// Alarm for deleting object
 alarm[0] = room_speed * 5;

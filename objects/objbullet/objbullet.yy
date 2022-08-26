@@ -5,7 +5,10 @@
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "objPlayerProjectileParent",
+    "path": "objects/objPlayerProjectileParent/objPlayerProjectileParent.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -25,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bullets",
+    "path": "folders/Objects/Bullets.yy",
   },
   "resourceVersion": "1.0",
   "name": "objBullet",

@@ -4,6 +4,7 @@ Vector2 =
 	y:0,
 	type:0,
 	GetAngle : function(){},
+	GetLength : function(){},
 }
 
 /// @function 			Vector2(_x,_y);
@@ -17,9 +18,33 @@ function Vector2(_x, _y) constructor
 	
 	GetAngle = function()
 	{
-		var len = sqrt(self.x*self.x + self.y*self.y);
+		if(x == 0){
+			return y > 0 ? 90 : (y == 0 ? 0 : 270);
+		}
+		else if (y == 0){
+			return (x >= 0)
+			? 0
+			: 180;
+		}
+		var ret = darctan(y/x);
+		if(x < 0 && y < 0){
+			ret = 180 + ret;
+		}
+		else if(x < 0){
+			ret = 180 + ret;
+		}
+		else if (y < 0){
+			ret = 270 + (90 + ret);
+		}
 		
-		return darccos(self.x/len);
+		return ret;
+		//var len = sqrt(self.x*self.x + self.y*self.y);
+		
+		//return darccos(self.x/len);
+	}
+	
+	GetLength = function(){
+		return sqrt(x*x + y*y);
 	}
 	
 	static Normalize = function() // Makes the vector size 1

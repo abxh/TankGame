@@ -1,4 +1,4 @@
-health = 10;
+health = global.MAXHEALTH;
 
 // Place at the center
 camera = view_get_camera(0);
@@ -23,3 +23,5 @@ v_max = 2;
 acc = v_max / 10;
 
 can_shoot = true;
+
+loading_val = 0;
