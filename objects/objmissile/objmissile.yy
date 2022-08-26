@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprCanon",
-    "path": "sprites/sprCanon/sprCanon.yy",
+    "name": "sprHomingMissle",
+    "path": "sprites/sprHomingMissle/sprHomingMissle.yy",
   },
   "solid": false,
   "visible": true,

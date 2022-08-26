@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprBullet",
+    "path": "sprites/sprBullet/sprBullet.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

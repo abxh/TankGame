@@ -22,8 +22,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Player",
-    "path": "folders/Objects/Player.yy",
+    "name": "objTank",
+    "path": "folders/Objects/Enemy/objTank.yy",
   },
   "resourceVersion": "1.0",
   "name": "objCanon",

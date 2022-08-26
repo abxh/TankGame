@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprBlob",
+    "path": "sprites/sprBlob/sprBlob.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
