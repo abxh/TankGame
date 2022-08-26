@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sprHull",
-    "path": "sprites/sprHull/sprHull.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
