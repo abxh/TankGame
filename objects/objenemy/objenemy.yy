@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sprEnemyTMP",
-    "path": "sprites/sprEnemyTMP/sprEnemyTMP.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
