@@ -20,16 +20,42 @@ if (key_down)  { r = Add(r, new Vector2( 0,-1)); dkey = true; }
 if (key_right) { r = Add(r, new Vector2( 1, 0)); dkey = true; }
 if (key_left)  { r = Add(r, new Vector2(-1, 0)); dkey = true; }
 
-if (dkey) r_approach = r.GetAngle();
-if (image_angle != r_approach) {
-	// Use the shortest angle to rotate.
-	var diff = r_approach - image_angle;
-	if (diff > 180)  image_angle += (diff - 360) / r_precision;
-	if (diff <= 180) image_angle += diff / r_precision;
+if (dkey) r_approach = r.GetAngle(); // Approach even if key is not pressed.
+
+var diff = angle_difference(r_approach, image_angle);
+image_angle += diff / r_precision;   // Smooth rotation
+var rotating_a_lot = floor(abs(diff)) > 45;
+
+if (rotating_a_lot) {
+	var img_i = floor(image_index);
+	if (img_i < frame_middle1) {
+		image_index = frame_middle1;
+	}
+	else {
+		image_index = frame_middle2;
+	}
+	return
+}
+else if !(dkey) {
+	image_speed = 0;
+	return
+}
+else {
+	image_speed = 1;
+}
+
+var img_i = floor(image_index);
+if (img_i == frame_front1 or img_i == frame_front2) {
+	spd = 0;
+}
+else {
+	if (spd < spd_max) {
+		spd += a_rate;
+	}
 }
 
 // Movement:
-if (key_up)    { y -= v_max; }
-if (key_down)  { y += v_max; }
-if (key_right) { x += v_max; }
-if (key_left)  { x -= v_max; }
+if (key_up)    { y -= spd; }
+if (key_down)  { y += spd; }
+if (key_right) { x += spd; }
+if (key_left)  { x -= spd; }
