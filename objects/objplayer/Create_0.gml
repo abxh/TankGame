@@ -1,5 +1,5 @@
 /// @description Set Variables
-// https://www.youtube.com/watch?v=u4zGiH_2lgY
+// 
 // Music by Karl Casey @ White Bat Audio
 
 // Place at the middle of camera 0:
@@ -20,4 +20,3 @@ frame_middle2 = 8; // -- || --
 a_rate  = 0.5;
 spd     = 0;
 spd_max = 2;
-image_speed_slow = 0.6;
