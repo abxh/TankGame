@@ -18,3 +18,6 @@ frame_front2  = 6; // one leg backward, one leg forward
 a_rate  = 0.5;
 spd     = 0;
 spd_max = 2;
+
+// Probably should be under loadingRoom
+window_set_caption("Planet Robotnik")
