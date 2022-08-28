@@ -14,8 +14,6 @@ r_precision = 10;
 // Movement-related:
 frame_front1  = 0; // one leg forward, one leg backward
 frame_front2  = 6; // one leg backward, one leg forward
-frame_middle1 = 3; // where both legs are beside each other.
-frame_middle2 = 8; // -- || --
 
 a_rate  = 0.5;
 spd     = 0;
