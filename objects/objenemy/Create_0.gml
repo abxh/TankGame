@@ -19,3 +19,6 @@ enemy_health = 3;
 
 min_range_go = 100;
 max_range_go = 300;
+
+image_yscale = 2;
+image_xscale = 2;

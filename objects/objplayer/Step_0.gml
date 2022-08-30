@@ -2,8 +2,15 @@
 
 function shoot(projectile){
 	can_shoot = false;
-	var instance = instance_create_layer(x,y,"insPlayer", projectile);
+	var vec = new Vector2(1,0);
+	vec.Scale(15*scale);
+	
+	var angle = incrementer%2 == 0 ? 90 : -90;
+	
+	vec.Rotate(image_angle + angle);
+	var instance = instance_create_layer(x+ vec.x,y+vec.y,"insPlayer", projectile);
 	alarm[0] = room_speed * reload_time;
+	incrementer++;
 	return instance;
 }
 

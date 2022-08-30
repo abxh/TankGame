@@ -1,10 +1,9 @@
 /// @description Set Variables
-// 
-// Music by Karl Casey @ White Bat Audio
 
 // Health stuff
 health = MAXHEALTH;
 
+scale = 3.5;
 
 // Place at the middle of camera 0:
 camera = view_get_camera(0);
@@ -25,4 +24,6 @@ window_set_caption("Planet Robotnik")
 
 // weapon-related
 can_shoot = true;
-reload_time = 1;
+reload_time = 0.75;
+
+incrementer = 0;

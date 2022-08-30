@@ -27,7 +27,7 @@
     {"id":{"name":"sprHomingMissleInitial","path":"sprites/sprHomingMissleInitial/sprHomingMissleInitial.yy",},"order":4,},
     {"id":{"name":"sprMechaBlue","path":"sprites/sprMechaBlue/sprMechaBlue.yy",},"order":6,},
     {"id":{"name":"objHull","path":"objects/objHull/objHull.yy",},"order":1,},
-    {"id":{"name":"objEnemy2","path":"objects/objEnemy2/objEnemy2.yy",},"order":1,},
+    {"id":{"name":"objEnemy2","path":"objects/objEnemy2/objEnemy2.yy",},"order":2,},
     {"id":{"name":"objEnemyBullet","path":"objects/objEnemyBullet/objEnemyBullet.yy",},"order":4,},
     {"id":{"name":"rooMain","path":"rooms/rooMain/rooMain.yy",},"order":0,},
     {"id":{"name":"objMissile","path":"objects/objMissile/objMissile.yy",},"order":5,},
@@ -76,7 +76,7 @@
     {"folderPath":"folders/Objects/Player.yy","order":4,"resourceVersion":"1.0","name":"Player","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Enemy.yy","order":2,"resourceVersion":"1.0","name":"Enemy","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Invisible.yy","order":3,"resourceVersion":"1.0","name":"Invisible","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/Objects/Enemy/objTank.yy","order":2,"resourceVersion":"1.0","name":"objTank","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Enemy/objTank.yy","order":3,"resourceVersion":"1.0","name":"objTank","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

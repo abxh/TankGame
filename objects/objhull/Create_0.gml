@@ -1,9 +1,9 @@
 enemy_health = 10;
 spd = 3;
 
-range_go = 200;
+range_go = 500;
 
-range_shoot = 400;
+range_shoot = 800;
 
 canon = instance_create_layer(x,y,"insEnemy", objCanon);
 
@@ -12,9 +12,11 @@ var target_depth = layer_get_depth("insPlayer");
 canon.depth = target_depth;
 
 
+scale = 3;
+
 
 // Offset canon by a little bit.
-canon_offset = 8;
+canon_offset = 8 * scale;
 canon.x = x - canon_offset;
 canon.y = y;
 
@@ -37,3 +39,9 @@ loading_val = 0;
 max_angle = 10;
 
 max_hull_angle = 10;
+
+image_yscale = scale;
+image_xscale = scale;
+
+canon.image_yscale = scale;
+canon.image_xscale = scale;

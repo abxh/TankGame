@@ -17,3 +17,8 @@ dir_vec.Rotate(image_angle);
 max_angle = 90;
 
 damage = MISSILEDAMAGE;
+
+var sprite = object_get_sprite(self);
+
+image_xscale = 3.5;
+image_yscale = 3.5;
