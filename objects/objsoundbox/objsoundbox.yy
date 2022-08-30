@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sprHealth",
-    "path": "sprites/sprHealth/sprHealth.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
@@ -21,15 +18,18 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Powerups",
-    "path": "folders/Objects/Powerups.yy",
+    "name": "Invisible",
+    "path": "folders/Objects/Invisible.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objHealthPowerup",
+  "name": "objSoundBox",
   "tags": [],
   "resourceType": "GMObject",
 }

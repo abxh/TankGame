@@ -20,4 +20,21 @@ if (key_down)  { r = Add(r, new Vector2( 0,-1)); dkey = true; }
 if (key_right) { r = Add(r, new Vector2( 1, 0)); dkey = true; }
 if (key_left)  { r = Add(r, new Vector2(-1, 0)); dkey = true; }
 
+if (dkey) r_approach = r.GetAngle(); // Approach even if key is not pressed.
+
+var diff = angle_difference(r_approach, image_angle);
+image_angle += diff / r_precision;   // Smooth rotation
+
 // Movement:
+if  (dkey) and (spd < spd_max) spd+=a_rate;
+if !(dkey) and (spd > 0)       spd-=a_rate*0.5;
+
+var v = new Vector2(1,0);
+v.Rotate(r_approach);
+v.Scale(spd);
+
+x += v.x;
+y -= v.y;
+
+if (spd == 0) { image_speed = 0; }
+if (spd != 0) { image_speed = spd/spd_max*2; }
