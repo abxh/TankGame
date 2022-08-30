@@ -56,9 +56,11 @@ function GetFrontEnemy(){
 function GetNewDirection(){
 	// self is the function caller which is always objMissile
 	
-	if(!instance_exists(enemy)){ // Prevents game from crashing
-		return new Vector2(x - objPlayer.y, y - objPlayer.y);
-	}
+	//if(!instance_exists(enemy)){ // Prevents game from crashing
+	//	var rect = new Vector2(1,0);
+	//	rect.Rotate(objPlayer.image_angle);
+	//	return rect;
+	//}
 	
 	var vec1 = new Vector2(x - objPlayer.x, y - objPlayer.y);
 	var vec2 = new Vector2(enemy.x - x, enemy.y - y);
