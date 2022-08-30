@@ -7,7 +7,7 @@ acc = 0.2;
 
 enemy = 0;
 
-image_angle = objCanon.image_angle;
+image_angle = objPlayer.image_angle;
 
 iterator = 1;
 
@@ -16,4 +16,4 @@ dir_vec.Rotate(image_angle);
 
 max_angle = 90;
 
-damage = 3;
+damage = MISSILEDAMAGE;

@@ -4,7 +4,7 @@
 difficulty = 1;
 
 SpawnHealth = function(pos){
-	instance_create_layer(pos.x, pos.y, "insPowerup", objHealthPowerup);
+	instance_create_layer(pos.x, pos.y, "insPlayer", objHealthPowerup);
 }
 
 SpawnEnemy = function(enemy_type){
@@ -27,5 +27,5 @@ SpawnEnemy = function(enemy_type){
 	
 	
 	show_debug_message("New enemy spawned");
-	instance_create_layer(vec.x + objHull.x, vec.y + objHull.y, "insEnemy", enemy_type);
+	instance_create_layer(vec.x + objPlayer.x, vec.y + objPlayer.y, "insEnemy", enemy_type);
 }

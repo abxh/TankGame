@@ -31,11 +31,15 @@ function Multiply(arg1, arg2)
     return val;
 }
 
-///	@func				Det(vec1, vec2);
+///	@func				Dot(vec1, vec2);
 ///	@param	{Vector2}	vec1
 ///	@param	{Vector2}	vec2
-function Det(vec1, vec2){
+function Dot(vec1, vec2){
 	return vec1.x*vec2.x + vec1.y*vec2.y;
+}
+
+function Det(vec1, vec2){
+	return vec1.x*vec2.y - vec1.y*vec2.x;
 }
 
 function Add(vec1, vec2){
@@ -53,5 +57,5 @@ function Angle(vec1, vec2){
 	if(vec1.GetLength() == 0 || vec2.GetLength() == 0){
 		return 0;
 	}
-	return darccos(Det(vec1,vec2)/(vec1.GetLength() * vec2.GetLength()));
+	return darccos(Dot(vec1,vec2)/(vec1.GetLength() * vec2.GetLength()));
 }

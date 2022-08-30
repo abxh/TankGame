@@ -1,27 +1,39 @@
-health = global.MAXHEALTH;
+enemy_health = 10;
+spd = 3;
 
-// Place at the center
-camera = view_get_camera(0);
-x=camera_get_view_x(camera) + camera_get_view_width(camera)/2;
-y=camera_get_view_y(camera) + camera_get_view_height(camera)/2;
+range_go = 200;
+
+range_shoot = 400;
+
+canon = instance_create_layer(x,y,"insEnemy", objCanon);
+
+var target_depth = layer_get_depth("insPlayer");
+
+canon.depth = target_depth;
+
 
 
 // Offset canon by a little bit.
 canon_offset = 8;
-objCanon.x = x - canon_offset;
-objCanon.y = y;
+canon.x = x - canon_offset;
+canon.y = y;
 
 // Variables related to rotation:
-image_angle = 0;
+image_angle = point_direction(x,y,objPlayer.x, objPlayer.y);
+
+
 rspeed = 0.5;
 
-canonSpeed = 2;
+canon_speed = 2;
 
-// Variables related to forward/backward movement:
-v_current = 0;
-v_max = 2;
-acc = v_max / 10;
+hull_turn_spd = 2;
+
+acc = 0.3;
 
 can_shoot = true;
 
 loading_val = 0;
+
+max_angle = 10;
+
+max_hull_angle = 10;
