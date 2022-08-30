@@ -2,3 +2,4 @@
 
 
 
+objPlayer.points += 20;

@@ -11,3 +11,5 @@ if(spawn_powerup){
 	
 	objSpawner.SpawnPowerup(self, powerups[powerup_to_spawn%array_length(powerups)]);
 }
+
+objPlayer.points += 5;

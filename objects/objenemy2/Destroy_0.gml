@@ -7,3 +7,5 @@ if(spawn_health){
 	//instance_create_layer(x,y,rooMain, objHealthPowerup);
 	objSpawner.SpawnHealth(self);
 }
+
+objPlayer.points += 5;

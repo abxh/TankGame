@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-dir_vec = GetNewDirection();
+if (instance_exists(enemy)){
+	dir_vec = GetNewDirection();
+}
 
 image_angle = dir_vec.GetAngle();
 

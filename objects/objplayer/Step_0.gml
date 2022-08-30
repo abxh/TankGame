@@ -1,5 +1,10 @@
 /// @description Movement controls
 
+if(health <= 0){
+	show_debug_message("Game Over!");
+	room_restart();
+}
+
 function shoot(projectile){
 	can_shoot = false;
 	var vec = new Vector2(1,0);
@@ -8,15 +13,10 @@ function shoot(projectile){
 	var angle = incrementer%2 == 0 ? 90 : -90;
 	
 	vec.Rotate(image_angle + angle);
-	var instance = instance_create_layer(x+ vec.x,y+vec.y,"insPlayer", projectile);
+	var instance = instance_create_layer(x+ vec.x,y-vec.y,"insPlayer", projectile);
 	alarm[0] = room_speed * reload_time;
 	incrementer++;
 	return instance;
-}
-
-if(health <= 0){
-	show_debug_message("Game Over!");
-	room_restart();
 }
 
 key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;
@@ -25,12 +25,6 @@ key_left  = keyboard_check(vk_left)   or keyboard_check(ord("A")) or gamepad_axi
 key_right = keyboard_check(vk_right)  or keyboard_check(ord("D")) or gamepad_axis_value(4, gp_axislh) >  0.5;
 key_shift = keyboard_check(vk_shift)  or gamepad_button_check(4, gp_face1);
 key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
-
-// gun control
-if(key_space && can_shoot){
-	var instance = shoot(objMissile);
-	instance.enemy = GetFrontEnemy();
-}
 
 // Rotation:
 var dkey = false;
@@ -58,3 +52,9 @@ y -= v.y;
 
 if (spd == 0) { image_speed = 0; }
 if (spd != 0) { image_speed = spd/spd_max*2; }
+
+// gun control
+if(key_space && can_shoot){
+	var instance = shoot(objMissile);
+	instance.enemy = GetFrontEnemy();
+}

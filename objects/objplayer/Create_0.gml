@@ -2,7 +2,7 @@
 
 // Health stuff
 health = MAXHEALTH;
-
+points = 0;
 scale = 3.5;
 
 // Place at the middle of camera 0:
