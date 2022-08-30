@@ -16,12 +16,9 @@ r_approach  = 0;
 r_precision = 10;
 
 // Movement-related:
-frame_front1  = 0; // one leg forward, one leg backward
-frame_front2  = 6; // one leg backward, one leg forward
-
-a_rate  = 0.5;
+a_rate  = 0.1;
 spd     = 0;
-spd_max = 2;
+spd_max = 3;
 
 // Probably should be under loadingRoom
 window_set_caption("Planet Robotnik")
