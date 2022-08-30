@@ -1,8 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (instance_exists(enemy)){
+if(instance_exists(enemy)){
 	dir_vec = GetNewDirection();
+}
+else{
+	dir_vec.Normalize();
+	dir_vec.Scale(spd);
 }
 
 image_angle = dir_vec.GetAngle();

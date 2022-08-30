@@ -1,10 +1,5 @@
 /// @description Movement controls
 
-if(health <= 0){
-	show_debug_message("Game Over!");
-	room_restart();
-}
-
 function shoot(projectile){
 	can_shoot = false;
 	var vec = new Vector2(1,0);
@@ -13,10 +8,16 @@ function shoot(projectile){
 	var angle = incrementer%2 == 0 ? 90 : -90;
 	
 	vec.Rotate(image_angle + angle);
-	var instance = instance_create_layer(x+ vec.x,y-vec.y,"insPlayer", projectile);
+	var instance = instance_create_layer(x + vec.x, y - vec.y, "insPlayer", projectile);
 	alarm[0] = room_speed * reload_time;
 	incrementer++;
 	return instance;
+}
+
+if(health <= 0){
+	show_debug_message("Game Over!");
+	room_goto(loadingRoom);
+	layer_destroy(rooMain);
 }
 
 key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;
@@ -34,6 +35,11 @@ if (key_down)  { r = Add(r, new Vector2( 0,-1)); dkey = true; }
 if (key_right) { r = Add(r, new Vector2( 1, 0)); dkey = true; }
 if (key_left)  { r = Add(r, new Vector2(-1, 0)); dkey = true; }
 
+var v = new Vector2(1,0);
+if(place_meeting(x + r.x, y - r.y, objEnemyParent)){
+	show_debug_message("Colliding with enemy!");
+}
+
 if (dkey) r_approach = r.GetAngle(); // Approach even if key is not pressed.
 
 var diff = angle_difference(r_approach, image_angle);
@@ -43,7 +49,6 @@ image_angle += diff / r_precision;   // Smooth rotation
 if  (dkey) and (spd < spd_max) spd+=a_rate;
 if !(dkey) and (spd > 0)       spd-=a_rate*0.5;
 
-var v = new Vector2(1,0);
 v.Rotate(r_approach);
 v.Scale(spd);
 

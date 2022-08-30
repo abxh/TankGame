@@ -30,4 +30,4 @@ SpawnEnemy = function(enemy_type){
 	instance_create_layer(vec.x + objPlayer.x, vec.y + objPlayer.y, "insEnemy", enemy_type);
 }
 
-instance_create_layer(objPlayer.x, objPlayer.y, "insEnemy", objHull);
+//instance_create_layer(objPlayer.x+ 200, objPlayer.y + 200, "insEnemy", objHull);

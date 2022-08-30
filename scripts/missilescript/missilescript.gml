@@ -54,8 +54,6 @@ function GetFrontEnemy(){
 }
 
 function GetNewDirection(){
-	// self is the function caller which is always objMissile
-	
 	var vec1 = new Vector2(x - objPlayer.x, y - objPlayer.y);
 	var vec2 = new Vector2(enemy.x - x, enemy.y - y);
 	
