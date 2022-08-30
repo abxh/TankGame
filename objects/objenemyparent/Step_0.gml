@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 function shoot(){
-	instance_create_layer(self.x, self.y, "insBullet", objEnemyBullet);
+	instance_create_layer(self.x, self.y, "insEnemy", objEnemyBullet);
 }
 
 function reload(){

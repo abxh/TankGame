@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprCanon",
+    "path": "sprites/sprCanon/sprCanon.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

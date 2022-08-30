@@ -3,10 +3,12 @@
 
 globalvar BULLETSPEED;
 globalvar MAXHEALTH;
+globalvar MISSILEDAMAGE;
 
 BULLETSPEED = 30;
-MAXHEALTH = 1000;
+MAXHEALTH = 100;
+MISSILEDAMAGE = 3;
 
 room_goto(rooMain);
 
-//layer_destroy(loadingRoom);
+layer_destroy(loadingRoom);

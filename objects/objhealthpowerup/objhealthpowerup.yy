@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Sprite5",
-    "path": "sprites/Sprite5/Sprite5.yy",
+    "name": "sprHealth",
+    "path": "sprites/sprHealth/sprHealth.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,7 +21,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

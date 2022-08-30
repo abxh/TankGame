@@ -16,3 +16,6 @@ speed = spd;
 reload_time = 0.8;
 
 enemy_health = 5;
+
+min_range_go = 100;
+max_range_go = 300;

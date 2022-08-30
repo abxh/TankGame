@@ -11,3 +11,5 @@ speed = 30;
 
 // Alarm for deleting object
 alarm[0] = room_speed * 5;
+
+damage = 3;
