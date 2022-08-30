@@ -1,6 +1,8 @@
 /// @description Movement controls
 
 function shoot(){
+	var instance = instance_create_layer(canon.x,canon.y,"insEnemy", objEnemyMissile);
+	instance.instantiator = self;
 	can_shoot = false;
 }
 

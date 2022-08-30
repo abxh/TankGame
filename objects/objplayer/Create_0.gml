@@ -14,6 +14,7 @@ image_angle = 0;
 r_approach  = 0;
 r_precision = 10;
 
+
 // Movement-related:
 a_rate  = 0.1;
 spd     = 0;
@@ -24,6 +25,6 @@ window_set_caption("Planet Robotnik")
 
 // weapon-related
 can_shoot = true;
-reload_time = 0.75;
+reload_time = 0.5;
 
 incrementer = 0;

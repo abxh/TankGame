@@ -16,7 +16,8 @@ function shoot(projectile){
 
 if(health <= 0){
 	show_debug_message("Game Over!");
-	room_restart();
+	room_goto(loadingRoom);
+	layer_destroy(rooMain);
 }
 
 key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;
@@ -37,11 +38,9 @@ if (key_right) { r = Add(r, new Vector2( 1, 0)); dkey = true; }
 if (key_left)  { r = Add(r, new Vector2(-1, 0)); dkey = true; }
 
 var v = new Vector2(1,0);
-//if(place_meeting(x + r.x, y - r.y, objEnemyParent)){
-	//show_debug_message("Colliding with enemy!");
-	//r.Scale(-1);
-	//v.Scale(-1);
-//}
+if(place_meeting(x + r.x, y - r.y, objEnemyParent)){
+	show_debug_message("Colliding with enemy!");
+}
 
 
 if (dkey) r_approach = r.GetAngle(); // Approach even if key is not pressed.
