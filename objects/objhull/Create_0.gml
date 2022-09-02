@@ -1,4 +1,7 @@
+camera = view_get_camera(0);
+
 enemy_health = 10;
+enemy_max_health = 10;
 spd = 3;
 
 range_go = 500;
@@ -45,3 +48,5 @@ image_xscale = scale;
 
 canon.image_yscale = scale;
 canon.image_xscale = scale;
+
+reload_time = 3;
