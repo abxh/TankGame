@@ -1,14 +1,13 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description 
 
 globalvar BULLETSPEED;
 globalvar MAXHEALTH;
 globalvar MISSILEDAMAGE;
+globalvar LOADINGSTATE;
 
 BULLETSPEED = 30;
 MAXHEALTH = 100;
 MISSILEDAMAGE = 3;
 
-room_goto(rooMain);
+LOADINGSTATE = 0;
 
-layer_destroy(loadingRoom);
