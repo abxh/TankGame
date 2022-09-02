@@ -3,7 +3,7 @@
 function shoot(projectile){
 	can_shoot = false;
 	var vec = new Vector2(1,0);
-	vec.Scale(15*scale);
+	vec.Scale(16*scale);
 	
 	var angle = incrementer%2 == 0 ? 90 : -90;
 	
