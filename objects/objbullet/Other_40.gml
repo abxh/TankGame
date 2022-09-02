@@ -1,3 +1,7 @@
-/// @description Delete object when outside view
+/// @description Insert description here
+// You can write your code in this editor
 
-instance_destroy(self);
+
+// Inherit the parent event
+event_inherited();
+
