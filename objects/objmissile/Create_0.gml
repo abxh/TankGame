@@ -10,6 +10,9 @@ image_angle = objPlayer.image_angle;
 
 iterator = 1;
 
+iterator_target = 0.75;
+iterator_speed = 0.002;
+
 dir_vec = new Vector2(1,0);
 dir_vec.Rotate(image_angle);
 

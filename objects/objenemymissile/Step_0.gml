@@ -1,14 +1,29 @@
 /// @description Insert description here
 
-dir_vec = GetNewDirection();
+if(!angle_set){ // Runs only once
+	// nessecary because instantiator is not set at Create event
+	image_angle = instantiator.canon.image_angle;
+	
+	dir_vec = new Vector2(1,0);
+	dir_vec.Rotate(image_angle);
+	angle_set = true;
+}
 
-dir_vec.Scale(-1);
+if(instance_exists(enemy) && !place_meeting(x,y,instantiator.canon)){
+	dir_vec = GetNewDirection("objEnemyMissile");
+}
+else{
+	dir_vec.Normalize();
+	dir_vec.Scale(spd);
+}
+
+image_angle = dir_vec.GetAngle();
 
 x += dir_vec.x;
 y -= dir_vec.y;
 
-if(iterator > 0.75){
-	iterator -= 0.002;
+if(iterator > iterator_target){
+	iterator -= iterator_speed;
 }
 
 if(spd < max_spd){

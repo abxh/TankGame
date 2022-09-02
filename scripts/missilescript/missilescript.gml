@@ -53,19 +53,38 @@ function GetFrontEnemy(){
 	return frontEnemy;
 }
 
-function GetNewDirection(){
-	var vec1 = new Vector2(x - objPlayer.x, y - objPlayer.y);
-	var vec2 = new Vector2(enemy.x - x, enemy.y - y);
+function GetNewDirection(obj_caller){
+	
+	if(obj_caller != "objMissile" && obj_caller != "objEnemyMissile"){
+		throw("Bad object caller string");
+	}
+	
+	var is_player = obj_caller == "objMissile";
+	
+	var vec1;
+	var vec2;
+	
+	
+	if(is_player){
+		vec1 = new Vector2(x - objPlayer.x, y - objPlayer.y);
+		vec2 = new Vector2(enemy.x - x, enemy.y - y);
+	}
+	else{
+		vec1 = new Vector2(x - self.instantiator.x, y - self.instantiator.y);
+		vec2 = new Vector2(objPlayer.x - x, objPlayer.y - y);
+	}
 	
 	var ret;
 	
 	if(Angle(vec1, vec2) < max_angle){
 		var dir1 = new Vector2(1,0);
+		
 		dir1.Rotate(self.image_angle);
 
 		var dir2 = new Vector2(1,0);
+		
 		dir2.Rotate(point_direction(self.x,self.y, self.enemy.x, self.enemy.y));
-
+		
 		dir2.Scale(1 - self.iterator);
 
 		dir1.Scale(self.iterator);
