@@ -4,6 +4,7 @@ function shoot(){
 	var instance = instance_create_layer(canon.x,canon.y,"insEnemy", objEnemyMissile);
 	instance.instantiator = self;
 	can_shoot = false;
+	alarm[0] = room_speed * reload_time;
 }
 
 function turnHull(deg){
