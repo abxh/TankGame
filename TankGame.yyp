@@ -21,6 +21,7 @@
     {"id":{"name":"objCanon","path":"objects/objCanon/objCanon.yy",},"order":0,},
     {"id":{"name":"loadingRoom","path":"rooms/loadingRoom/loadingRoom.yy",},"order":1,},
     {"id":{"name":"Matrix","path":"scripts/Matrix/Matrix.yy",},"order":1,},
+    {"id":{"name":"objGravityHand","path":"objects/objGravityHand/objGravityHand.yy",},"order":4,},
     {"id":{"name":"objLoadingRoom","path":"objects/objLoadingRoom/objLoadingRoom.yy",},"order":2,},
     {"id":{"name":"objEnemyMissile","path":"objects/objEnemyMissile/objEnemyMissile.yy",},"order":6,},
     {"id":{"name":"fntClearSansLarge","path":"fonts/fntClearSansLarge/fntClearSansLarge.yy",},"order":2,},
