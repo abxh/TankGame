@@ -1,6 +1,3 @@
-/// @description set hp_regen_now bool
+/// @description Reset can_run cooldown
 
-if (health < MAXHEALTH) {
-	hp_new = health + 1;
-	hp_regen_now = true;
-}
+can_run = true;
