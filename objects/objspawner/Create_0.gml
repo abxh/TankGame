@@ -12,8 +12,8 @@ SpawnEnemy = function(enemy_type){
 	var cam_width = camera_get_view_width(camera);
 	var cam_height = camera_get_view_height(camera);
 
-	// The distance from the center to a corner
-	var len = sqrt((cam_width*cam_width)/4 + (cam_height*cam_height)/4);
+	// The distance from the center to a corner + 20 for padding
+	var len = sqrt((cam_width*cam_width) + (cam_height*cam_height))+20;
 
 	// generates a random angle
 	var rand_angle = random_range(0,360);

@@ -1,5 +1,7 @@
 /// @description 
 
+window_set_caption("Nature's Revenge")
+
 globalvar NAME;
 globalvar POINTS;
 globalvar LOADINGSTATE;

@@ -31,9 +31,6 @@ can_run = true;
 running = false;
 run_cooldown_time = 2;
 
-// Probably should be under loadingRoom
-window_set_caption("Planet Robotnik")
-
 // weapon-related
 can_shoot = true;
 reload_time = 0.5;
