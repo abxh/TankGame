@@ -1,3 +1,3 @@
 /// @description
 
-highscore_add(NAME, rooMain.objPlayer.points);
+highscore_add(NAME, POINTS);

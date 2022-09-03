@@ -14,3 +14,6 @@ direction = point_direction(x,y, objPlayer.x, objPlayer.y);
 image_angle = direction;
 
 killed_by_player = true;
+
+image_yscale = 1.5;
+image_xscale = 1.5;

@@ -16,8 +16,10 @@ function shoot(projectile){
 
 if(health <= 0){
 	show_debug_message("Game Over!");
+	LOADINGSTATE = 1;
+	POINTS = points;
 	room_goto(rooName);
-	layer_destroy(rooMain);
+	layer_destroy(rooGame);
 }
 
 key_up    = keyboard_check(vk_up)     or keyboard_check(ord("W")) or gamepad_axis_value(4, gp_axislv) < -0.5;

@@ -28,7 +28,7 @@
     "path": "folders/Objects/RoomObjects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objStartup",
+  "name": "objRooStartup",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Invisible",
-    "path": "folders/Objects/Invisible.yy",
+    "name": "RoomObjects",
+    "path": "folders/Objects/RoomObjects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objLoadingRoom",
+  "name": "objRooTitle",
   "tags": [],
   "resourceType": "GMObject",
 }
