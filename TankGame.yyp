@@ -26,6 +26,7 @@
     {"id":{"name":"Matrix","path":"scripts/Matrix/Matrix.yy",},"order":1,},
     {"id":{"name":"rooStartup","path":"rooms/rooStartup/rooStartup.yy",},"order":4,},
     {"id":{"name":"rooName","path":"rooms/rooName/rooName.yy",},"order":2,},
+    {"id":{"name":"objGravityHand","path":"objects/objGravityHand/objGravityHand.yy",},"order":4,},
     {"id":{"name":"objLoadingRoom","path":"objects/objLoadingRoom/objLoadingRoom.yy",},"order":2,},
     {"id":{"name":"objEnemyMissile","path":"objects/objEnemyMissile/objEnemyMissile.yy",},"order":6,},
     {"id":{"name":"objStartup","path":"objects/objStartup/objStartup.yy",},"order":2,},
