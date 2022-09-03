@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-spd = 3;
+spd = 4;
 range_go = 200;
 range_shoot = 300;
 

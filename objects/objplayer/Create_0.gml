@@ -20,6 +20,17 @@ a_rate  = 0.1;
 spd     = 0;
 spd_max = 3;
 
+a_rate_sprint = 0.2;
+spd_max_sprint = 6;
+
+stamina = 10;
+stamina_use_rate = 0.05;
+stamina_gain_rate = 0.02;
+
+can_run = true;
+running = false;
+run_cooldown_time = 2;
+
 // Probably should be under loadingRoom
 window_set_caption("Planet Robotnik")
 
