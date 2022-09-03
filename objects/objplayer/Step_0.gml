@@ -29,23 +29,7 @@ key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
 
 
 running = key_shift && can_run;
-//if(key_shift && can_run){
-	//running = true;
-	//a_rate = 0.2;
-	//spd_max = 6;
-	//stamina -= stamina_use_rate;
-//}
-//else{
-	//running = false;
-	//a_rate = 0.1;
-	//spd_max = 3;
-	//if(stamina < 10){
-	//	stamina += stamina_gain_rate;
-	//}
-	//if(spd > spd_max_sprint){
-	//	spd -= a_rate;
-	//}
-//}
+
 
 if(running){
 	stamina -= stamina_use_rate;
@@ -55,9 +39,6 @@ else{
 		stamina += stamina_gain_rate;
 	}
 	
-	//if(spd > spd_max){
-	//	spd -= a_rate;
-	//}
 }
 
 
@@ -101,17 +82,6 @@ y -= v.y;
 
 if (spd == 0) { image_speed = 0; }
 if (spd != 0) { image_speed = spd/spd_max*2; }
-
-//if (running){
-//	if (spd == 0) { image_speed = 0; }
-//	if (spd != 0) { image_speed = spd/spd_max_sprint*2; }
-//}
-//else{
-//	if (spd == 0) { image_speed = 0; }
-//	if (spd != 0) { image_speed = spd/spd_max*2; }
-//}
-
-show_debug_message(spd);
 
 // gun control
 if(key_space && can_shoot){
