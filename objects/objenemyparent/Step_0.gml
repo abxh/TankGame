@@ -24,7 +24,7 @@ if(dist < range_go){
 }
 
 if(dist > range_shoot && speed == 0){
-	speed = 3;
+	speed = spd;
 	range_go = random_range(min_range_go, max_range_go);
 }
 
