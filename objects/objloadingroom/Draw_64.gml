@@ -1,6 +1,6 @@
 /// @description
 
-draw_set_font(fntClearSansLarge);
+draw_set_font(fntClearSansLargeLarge);
 draw_text(280,300,"Nature's Revenge");
 
 draw_set_font(fntClearSansMedium);

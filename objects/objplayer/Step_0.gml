@@ -16,7 +16,7 @@ function shoot(projectile){
 
 if(health <= 0){
 	show_debug_message("Game Over!");
-	room_goto(loadingRoom);
+	room_goto(rooName);
 	layer_destroy(rooMain);
 }
 
