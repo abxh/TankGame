@@ -27,6 +27,27 @@ key_right = keyboard_check(vk_right)  or keyboard_check(ord("D")) or gamepad_axi
 key_shift = keyboard_check(vk_shift)  or gamepad_button_check(4, gp_face1);
 key_space = keyboard_check(vk_space)  or gamepad_button_check(4, gp_face2);
 
+
+running = key_shift && can_run;
+
+
+if(running){
+	stamina -= stamina_use_rate;
+}
+else{
+	if(stamina < 10){
+		stamina += stamina_gain_rate;
+	}
+	
+}
+
+
+if(stamina <= 0 && can_run){ // Cooldown when stamina bar reaches 0
+	can_run = false;
+	alarm[1] = room_speed * run_cooldown_time;
+}
+
+
 // Rotation:
 var dkey = false;
 var r    = new Vector2(0,0);
@@ -46,8 +67,12 @@ var diff = angle_difference(r_approach, image_angle);
 image_angle += diff / r_precision;   // Smooth rotation
 
 // Movement:
-if  (dkey) and (spd < spd_max) spd+=a_rate;
-if !(dkey) and (spd > 0)       spd-=a_rate*0.5;
+
+var current_max_spd = running ? spd_max_sprint : spd_max;
+var current_a_rate  = running ? a_rate_sprint  : a_rate;
+
+if  (dkey) and (spd < current_max_spd)					spd+=current_a_rate;
+if (!(dkey) and (spd > 0)) or (spd > current_max_spd)	spd-=current_a_rate*0.5;
 
 v.Rotate(r_approach);
 v.Scale(spd);
