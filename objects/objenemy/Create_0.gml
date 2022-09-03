@@ -7,13 +7,13 @@ range_shoot = 300;
 
 can_shoot = true;
 
-magazine_size = 3;
+magazine_size = 2;
 
-bullets_count = 3;
+bullets_count = 1;
 
 speed = spd;
 
-reload_time = 1;
+reload_time = 2;
 
 enemy_health = 3;
 

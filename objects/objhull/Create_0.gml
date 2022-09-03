@@ -1,7 +1,7 @@
 camera = view_get_camera(0);
 
-enemy_health = 10;
-enemy_max_health = 10;
+enemy_health = 18;
+enemy_max_health = 18;
 spd = 3;
 
 range_go = 500;

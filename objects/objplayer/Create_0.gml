@@ -25,7 +25,7 @@ spd_max_sprint = 6;
 
 stamina = 10;
 stamina_use_rate = 0.05;
-stamina_gain_rate = 0.02;
+stamina_gain_rate = 0.01;
 
 can_run = true;
 running = false;

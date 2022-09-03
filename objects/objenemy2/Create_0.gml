@@ -1,19 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-spd = 4;
+spd = 5;
 range_go = 200;
-range_shoot = 400;
+range_shoot = 300;
 
 can_shoot = true;
 
-magazine_size = 5;
+magazine_size = 3;
 
-bullets_count = 3;
+bullets_count = 2;
 
 speed = spd;
 
-reload_time = 0.8;
+reload_time = 2;
 
 enemy_health = 5;
 
