@@ -3,6 +3,12 @@
 
 function shoot(){
 	instance_create_layer(self.x, self.y, "insEnemy", objEnemyBullet);
+	var dir = new Vector2(1,0);
+	dir.Scale(30);
+	dir.Rotate(direction);
+	
+	
+	effect_create_above(ef_smoke, x + dir.x, y - dir.y, 0.5, c_white);
 }
 
 function reload(){
