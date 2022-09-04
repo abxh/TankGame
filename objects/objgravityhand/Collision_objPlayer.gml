@@ -8,3 +8,5 @@ instance_destroy(self);
 health -= self.damage;
 
 show_debug_message(health);
+
+effect_create_above(ef_explosion, x, y, 0.5, c_orange);
