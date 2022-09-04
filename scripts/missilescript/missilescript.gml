@@ -21,14 +21,18 @@ function GetClosestEnemy(){
 
 function GetFrontEnemy(){
 	var enemies = [0];
-	var frontEnemy;
+	var frontEnemy = noone;
 	
 	var count = instance_number(objEnemyParent);
+	
+	if(count = 0){
+		return noone;
+	}
 	
 	for(var i = 0; i < count; i++){
 		enemies[i] = instance_find(objEnemyParent, i);
 	}
-	frontEnemy = enemies[0];
+	//frontEnemy = enemies[0];
 	
 	var dir_closest = new Vector2(1,0);
 	
@@ -38,18 +42,31 @@ function GetFrontEnemy(){
 	
 	dir.Rotate(objPlayer.image_angle);
 	
+	var cam = view_get_camera(0);
+	var cam_x = camera_get_view_x(cam);
+	var cam_y = camera_get_view_y(cam);
+	var cam_width = camera_get_view_width(cam);
+	var cam_height = camera_get_view_height(cam);
+	
 	for(var i = 0; i < count; i++){
+		var in_view = point_in_rectangle(enemies[i].x, enemies[i].y, cam_x, cam_y, cam_x + cam_width, cam_y + cam_height);
+		if(!in_view){
+			continue;
+		}
+		if(i = 0) frontEnemy = enemies[0];
+		
 		var dir_current = new Vector2(1,0);
+		dir_current.Rotate(point_direction(x, y, enemies[i].x, enemies[i].y))
 		
 		if(Angle(dir, dir_current) < Angle(dir, dir_closest))
 		{
-			dir_closest = new Vector2(1,0);
+			//dir_closest = new Vector2(1,0);
+			dir_closest = dir_current;
 			
-			dir_closest.Rotate(point_direction(x, y, enemies[i].x, enemies[i].y));
+			//dir_closest.Rotate(point_direction(x, y, enemies[i].x, enemies[i].y));
 			frontEnemy = enemies[i];
 		}
 	}
-	show_debug_message(Angle(dir, dir_closest));
 	return frontEnemy;
 }
 
@@ -64,19 +81,22 @@ function GetNewDirection(obj_caller){
 	var vec1;
 	var vec2;
 	
+	var enemy_in_frame = true;
 	
 	if(is_player){
-		vec1 = new Vector2(x - objPlayer.x, y - objPlayer.y);
-		vec2 = new Vector2(enemy.x - x, enemy.y - y);
+		vec1 = self.dir_vec;
+		
+		vec2 = new Vector2(enemy.x - x, y - enemy.y);
 	}
 	else{
-		vec1 = new Vector2(x - self.instantiator.x, y - self.instantiator.y);
-		vec2 = new Vector2(objPlayer.x - x, objPlayer.y - y);
+		vec1 = dir_vec;
+		
+		vec2 = new Vector2(objPlayer.x - x, y - objPlayer.y);
 	}
 	
 	var ret;
 	
-	if(Angle(vec1, vec2) < max_angle){
+	if(Angle(vec1, vec2) < max_angle && enemy_in_frame){
 		var dir1 = new Vector2(1,0);
 		
 		dir1.Rotate(self.image_angle);
