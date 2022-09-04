@@ -14,6 +14,78 @@ function shoot(projectile){
 	return instance;
 }
 
+var function InTerrain(terrain){
+	return place_meeting(x,y,terrain);
+}
+
+var function GoingToCollide(dir, obj){
+	dir.Normalize();
+	dir.Scale(2);
+	//return collision_circle(x + dir.x, y - dir.y,10,obj,true, false);
+	
+	return place_meeting(x + dir.x ,y - dir.y, obj)
+}
+
+var function IsColliding(obj){
+	return place_meeting(x, y, obj);
+}
+
+var function IsOutsideRoom(x_pos, y_pos){
+	var outside = false;
+	
+	outside = x_pos < 0 || x_pos > room_width || y_pos < 0 || y_pos > room_height;
+	
+	return outside;
+}
+
+// Code is copy-pasted from https://www.gmlscripts.com/script/collision_normal
+
+/// @func   collision_normal(x, y, obj, radius, spacing)
+///
+/// @desc   Returns a 2D "surface normal" at a point on or near an
+///         instance within a test area. The test area is circular
+///         and the detected normal direction is returned in degrees.
+///         If no collision is found, (-1) is returned. Uses about
+///         pi*(radius*radius)/(spacing*spacing) collision checks.
+///
+/// @param  {real}      x           x-coordinate of point near an instance
+/// @param  {real}      y           y-coordinate of point near an instance
+/// @param  {object}    obj         object or instance (or all)
+/// @param  {real}      radius      radius of test area (default 4)
+/// @param  {real}      spacing     space between each sample (default 1)
+///
+/// @return {real}      direction pointing away from the detected surface
+///
+/// GMLscripts.com/license
+function collision_normal(x, y, obj, radius=4, spacing=1){
+    var nx = 0;
+    var ny = 0;
+    if (collision_circle(x, y, radius, obj, true, true) != noone) {
+        for (var j=spacing; j<=radius; j+=spacing) {
+            for (var i=0; i<radius; i+=spacing) {
+                if (point_distance(0, 0, i, j) <= radius) {
+                    if (collision_point(x+i, y+j, obj, true, true) == noone) { nx += i; ny += j; }
+                    if (collision_point(x+j, y-i, obj, true, true) == noone) { nx += j; ny -= i; }
+                    if (collision_point(x-i, y-j, obj, true, true) == noone) { nx -= i; ny -= j; }
+                    if (collision_point(x-j, y+i, obj, true, true) == noone) { nx -= j; ny += i; }
+                }
+            }
+        }
+        if (nx == 0 && ny == 0) return (-1);
+        return point_direction(0, 0, nx, ny);
+    }
+    return (-1);
+}
+
+var speed_multiplier = 1;
+
+if(InTerrain(objForest)){
+	speed_multiplier = 0.7;
+}
+else if (InTerrain(objMarsh)){
+	speed_multiplier = 0.5;
+}
+
 if(health <= 0){
 	show_debug_message("Game Over!");
 	LOADINGSTATE = 1;
@@ -73,11 +145,35 @@ image_angle += diff / r_precision;   // Smooth rotation
 var current_max_spd = running ? spd_max_sprint : spd_max;
 var current_a_rate  = running ? a_rate_sprint  : a_rate;
 
+current_max_spd *= speed_multiplier;
+current_a_rate *= speed_multiplier;
+
 if  (dkey) and (spd < current_max_spd)					spd+=current_a_rate;
 if (!(dkey) and (spd > 0)) or (spd > current_max_spd)	spd-=current_a_rate*0.5;
 
 v.Rotate(r_approach);
+
 v.Scale(spd);
+
+if(IsColliding(objForest)){
+	var s = collision_normal(x, y, objForest, sprite_width, 5);
+	
+	v = new Vector2(1, 0);
+	v.Rotate(s);
+	v.Scale(spd);
+}
+else if(IsColliding(objEnemyParent)){
+	var s = collision_normal(x, y, objEnemyParent, sprite_width, 5);
+	
+	v = new Vector2(1, 0);
+	v.Rotate(s);
+	v.Scale(spd);
+}
+
+if(IsOutsideRoom(x + v.x, y - v.y)){
+	v.Scale(0);
+}
+
 
 x += v.x;
 y -= v.y;
