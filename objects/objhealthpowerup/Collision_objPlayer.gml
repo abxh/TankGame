@@ -1,5 +1,5 @@
 /// @description
 
-health+=5;
+health+=5
 
 instance_destroy(self);
