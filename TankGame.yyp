@@ -46,6 +46,7 @@
     {"id":{"name":"sprForest","path":"sprites/sprForest/sprForest.yy",},"order":12,},
     {"id":{"name":"objEnemyBullet","path":"objects/objEnemyBullet/objEnemyBullet.yy",},"order":4,},
     {"id":{"name":"rooGame","path":"rooms/rooGame/rooGame.yy",},"order":0,},
+    {"id":{"name":"objRooGame","path":"objects/objRooGame/objRooGame.yy",},"order":4,},
     {"id":{"name":"fntClearSansMedium","path":"fonts/fntClearSansMedium/fntClearSansMedium.yy",},"order":1,},
     {"id":{"name":"objMissile","path":"objects/objMissile/objMissile.yy",},"order":5,},
     {"id":{"name":"objDamagePowerup","path":"objects/objDamagePowerup/objDamagePowerup.yy",},"order":1,},

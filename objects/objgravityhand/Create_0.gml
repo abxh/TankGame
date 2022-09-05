@@ -5,7 +5,19 @@ enemy_health = 3;
 
 spd = 3;
 
-speed = spd;
+// Extreamley hacky code so we can inheriet
+// Step event from objEnemyParent
+min_range_go = 0;
+max_range_go = 0;
+
+range_go = 0;
+range_shoot = 0;
+
+status = "find_path";
+
+can_shoot = false;
+bullets_count = 0;
+
 
 damage = 10;
 

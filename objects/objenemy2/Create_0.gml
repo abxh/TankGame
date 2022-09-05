@@ -11,7 +11,7 @@ magazine_size = 3;
 
 bullets_count = 2;
 
-speed = spd;
+//speed = spd;
 
 reload_time = 2;
 
@@ -22,3 +22,5 @@ max_range_go = 400;
 
 image_yscale = 2;
 image_xscale = 2;
+
+status = "find_path";

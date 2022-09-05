@@ -2,7 +2,7 @@ camera = view_get_camera(0);
 
 enemy_health = 20*floor(objSpawner.difficulty/2);
 enemy_max_health = 20*floor(objSpawner.difficulty/2);
-spd = 3;
+spd_max = 3;
 
 range_go = 500;
 
