@@ -14,7 +14,9 @@ image_angle = dir_vec.GetAngle();
 x += dir_vec.x;
 y -= dir_vec.y;
 
-effect_create_above(ef_smoke, x - dir_vec.x, y + dir_vec.y,0.5, c_white);
+if(!collision_circle(x,y,30,objPlayer,true, true)){
+	effect_create_above(ef_smoke, x - dir_vec.x, y + dir_vec.y,0.5, c_white);
+}
 
 if(iterator > iterator_target){
 	iterator -= iterator_speed;

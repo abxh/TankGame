@@ -21,6 +21,13 @@ if(enemy_health <= 0){
 	return;
 }
 
+if(collision_circle(x,y,25,objForest,true,false)){
+	spd_max = 1.5;
+}
+else{
+	spd_max = 3;
+}
+
 
 var dist = point_distance(x,y,objPlayer.x, objPlayer.y);
 
@@ -51,8 +58,12 @@ var s_hull = Det(v1, v_hull) != 0 ?
 	sign(Det(v1, v_hull)) : 1;
 
 // acelleration
-if(dist > range_shoot && speed < spd){
+if(dist > range_shoot && speed < spd_max){
 	speed += acc;
+}
+
+if(speed > spd_max){
+	speed -= acc;
 }
 
 // hull direction control

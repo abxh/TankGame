@@ -11,7 +11,7 @@ magazine_size = 2;
 
 bullets_count = 1;
 
-speed = spd;
+//speed = spd;
 
 reload_time = 2;
 
@@ -22,3 +22,7 @@ max_range_go = 300;
 
 image_yscale = 2;
 image_xscale = 2;
+
+status = "find_path";
+
+//pathing = new lw_path(x,x,x,x,0,spd,false);
