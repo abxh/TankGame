@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 difficulty = 1;
+level = 1;
 
 SpawnPowerup = function(pos, powerup){
 	instance_create_layer(pos.x, pos.y, "insPlayer", powerup);

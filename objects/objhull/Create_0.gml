@@ -1,7 +1,7 @@
 camera = view_get_camera(0);
 
-enemy_health = 20*floor(objSpawner.difficulty/2);
-enemy_max_health = 20*floor(objSpawner.difficulty/2);
+enemy_health = 50*floor(objSpawner.difficulty);
+enemy_max_health = 50*floor(objSpawner.difficulty);
 spd_max = 3;
 
 range_go = 500;
@@ -14,9 +14,7 @@ var target_depth = layer_get_depth("insPlayer");
 
 canon.depth = target_depth;
 
-
-scale = 3;
-
+scale = objSpawner.level;
 
 // Offset canon by a little bit.
 canon_offset = 8 * scale;

@@ -17,6 +17,10 @@ else{
 	dir_vec.Scale(spd);
 }
 
+if(!collision_circle(x,y,30,objCanon,true, true)){
+	effect_create_above(ef_smoke, x - dir_vec.x, y + dir_vec.y,0.5, c_white);
+}
+
 image_angle = dir_vec.GetAngle();
 
 x += dir_vec.x;
