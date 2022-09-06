@@ -3,11 +3,6 @@
 
 var spawn_powerup = random(100) > 30;
 
-if(spawn_powerup){
-	var powerups = [objHealthPowerup, objDamagePowerup];
-	var powerup_to_spawn = floor(random(100));
-	
-	objSpawner.SpawnPowerup(self, powerups[powerup_to_spawn%array_length(powerups)]);
-}
+if(spawn_powerup) spawn_powerups()
 
 objPlayer.points += 10;
