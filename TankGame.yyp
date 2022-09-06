@@ -71,10 +71,10 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rooName","path":"rooms/rooName/rooName.yy",},},
     {"roomId":{"name":"rooStartup","path":"rooms/rooStartup/rooStartup.yy",},},
     {"roomId":{"name":"rooTitle","path":"rooms/rooTitle/rooTitle.yy",},},
     {"roomId":{"name":"rooGame","path":"rooms/rooGame/rooGame.yy",},},
+    {"roomId":{"name":"rooName","path":"rooms/rooName/rooName.yy",},},
     {"roomId":{"name":"rooHighScore","path":"rooms/rooHighScore/rooHighScore.yy",},},
   ],
   "Folders": [
