@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+event_inherited();
+
 spd = 5;
 range_go = 200;
 range_shoot = 300;

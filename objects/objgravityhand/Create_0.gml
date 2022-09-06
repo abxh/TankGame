@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+event_inherited();
+
 enemy_health = 3;
 
 spd = 10;
@@ -17,7 +19,6 @@ status = "find_path";
 
 can_shoot = false;
 bullets_count = 0;
-
 
 damage = 10;
 

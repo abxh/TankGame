@@ -1,20 +1,5 @@
 /// @description Movement controls
 
-function shoot(){
-	var instance = instance_create_layer(canon.x,canon.y,"insEnemy", objEnemyMissile);
-	instance.instantiator = self;
-	can_shoot = false;
-	alarm[0] = room_speed * reload_time;
-}
-
-function turnHull(deg){
-	image_angle += deg;
-}
-
-function turnCanon(deg){
-	canon.image_angle += deg;
-}
-
 if(enemy_health <= 0){
 	instance_destroy(canon);
 	instance_destroy(self);
