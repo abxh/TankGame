@@ -2,7 +2,7 @@
 
 //var num = random(difficulty * 10);
 
-var num = random(30);
+var num = random(30 * difficulty);
 
 if(num <= 20){
 	SpawnEnemy(objEnemy);
@@ -14,13 +14,4 @@ else{
 	SpawnEnemy(objEnemy2);
 }
 
-//else if (num <= 35){
-//	SpawnEnemy(objHull);
-//}
-
-//SpawnEnemy(objEnemy);
-
-//if(difficulty > 2){
-//	SpawnEnemy(objEnemy2);
-//}
-
+// objHull spawner is in alarm 1
