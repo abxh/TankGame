@@ -10,5 +10,5 @@ if(killed_by_player){ // only spawn powerups when killed by player
 }
 else{
 	
-	effect_create_above(ef_explosion, x, y, 2, c_orange);
+	effect_create_above(ef_explosion, x, y, 0.5, c_orange);
 }

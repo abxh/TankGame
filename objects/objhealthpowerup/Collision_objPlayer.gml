@@ -1,8 +1,6 @@
 /// @description
 
-health+=5
-if(health > MAXHEALTH){ // prevent health being above maxhealth
-	health = MAXHEALTH;
-}
+health = min(health + 5, MAXHEALTH);
 
 instance_destroy(self);
+

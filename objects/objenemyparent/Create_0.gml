@@ -17,7 +17,7 @@ function reload(){
 
 function spawn_powerups() {
 	var powerups = [objHealthPowerup, objDamagePowerup];
-	var powerup_to_spawn = floor(random(100));
+	var powerup_id = floor(random(100)) % array_length(powerups);
 	
-	objSpawner.SpawnPowerup(self, powerups[powerup_to_spawn%array_length(powerups)]);
+	objSpawner.SpawnPowerup(self, powerups[powerup_id]);
 }

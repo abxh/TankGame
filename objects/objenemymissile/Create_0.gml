@@ -16,7 +16,7 @@ iterator_speed = 0.002;
 
 max_angle = 45;
 
-damage = 5;
+damage = 5 * objSpawner.level / 2;
 
 image_xscale = objHull.scale * 0.85;
 image_yscale = objHull.scale * 0.85;

@@ -1,8 +1,5 @@
 /// @description Health bar
 
-var cam_width = camera_get_view_width(camera);
-var cam_height = camera_get_view_height(camera);
-
 // absolute x,y position of camera
 var cam_pos_x = camera_get_view_x(camera);
 var cam_pos_y = camera_get_view_y(camera);
