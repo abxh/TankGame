@@ -1,6 +1,11 @@
 /// @description Powerup dropping
 
-// always spawn powerup when dead
+// Always spawn powerup when dead
+// unless inside objForest
+if(place_meeting(x,y, objForest)){
+	return;
+}
+
 spawn_powerups()
 
 objPlayer.points += 20;

@@ -4,4 +4,4 @@
 show_debug_message("Missile deleted");
 
 //effect_create_above(ef_explosion, x, y, 0.5, c_orange);
-effect_create_above(ef_explosion, x, y, MISSILEDAMAGE/10, c_orange);
+effect_create_above(ef_explosion, x, y, 1, c_orange);
