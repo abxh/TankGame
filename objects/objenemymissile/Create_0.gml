@@ -18,7 +18,7 @@ max_angle = 45;
 
 damage = 5;
 
-image_xscale = 3.5;
-image_yscale = 3.5;
+image_xscale = objHull.scale * 0.85;
+image_yscale = objHull.scale * 0.85;
 
 angle_set = false;

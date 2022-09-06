@@ -3,7 +3,7 @@
 
 enemy_health = 3;
 
-spd = 3;
+spd = 10;
 
 // Extreamley hacky code so we can inheriet
 // Step event from objEnemyParent
