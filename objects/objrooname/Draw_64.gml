@@ -32,7 +32,7 @@ for (i=0; i < rows; i++) {
 
 draw_set_font(fntClearSansMedium);
 draw_text(x_ref -30, y_ref + 30 + row_height * (rows + 3),
-	    "Press Circle/Spacebar to insert, Triange/Shift to delete."
+	    "Press Circle/Spacebar to insert, Triangle/Shift to delete."
 	 +"\n"
 	 +"\nFill the rest of the name with spaces to confirm name."
 	 +"\n(Spaces comes after the alphabets.)");
